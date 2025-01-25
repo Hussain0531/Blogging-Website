@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+      
+      - name: Install Linting Tools
+        run: |
+          npm install -g htmlhint stylelint
+  
       - name: Lint HTML and CSS
         run: |
           npx htmlhint "**/*.html"
